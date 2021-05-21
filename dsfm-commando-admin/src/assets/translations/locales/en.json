@@ -1,0 +1,20 @@
+{
+  "features.login.button": "LOGIN",
+  "features.login.username": "Username",
+  "features.login.password": "Password",
+  "sidebar.blankPage": "Blank Page",
+  "validate.required": "Required",
+  "features.global.list-title": "{name} List",
+  "features.global.create-title": "Create {name}",
+  "features.global.edit-title": "Edit {name}",
+  "sidebar.dashboard": "Dashboard",
+  "sidebar.mers": "Mer Management",
+  "sidebar.stores": "Store Management",
+  "sidebar.plans": "Plan Management",
+  "sidebar.regions": "Region Management",
+  "sidebar.store-types": "Store type Management",
+  "sidebar.zones": "Zone Management",
+  "sidebar.cities": "City Management",
+  "sidebar.charts": "Charts",
+  "sidebar.kpi": "KPI"
+}

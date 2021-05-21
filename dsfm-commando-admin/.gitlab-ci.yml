@@ -1,0 +1,44 @@
+stages:
+  - build
+  - deploy
+
+before_script:
+  - export CI_ENVIRONMENT_SIMPLIFIED=$(echo $CI_ENVIRONMENT_NAME | tr ' ' '_')
+  - if [ "$VERSION_SRC" = "detect" ]; then chmod u+x ./detect_develop_version.sh && export VERSION_SRC=$(./detect_develop_version.sh); fi;
+  - export VERSION=$(echo "$VERSION_SRC" | egrep -o "[0-9]+\.[0-9]+\.[0-9]+")
+  - echo $VERSION
+  - source ${ENV_FILE}
+
+.production: &production
+  environment: production
+  variables:
+    VERSION_SRC: "$CI_COMMIT_REF_NAME"
+    VERSION_PRELEASE: "-"
+    HOST_PORT: "your port"
+    ENV_FILE: ./.env/prod.env
+  only:
+    - /^v.*/
+  except:
+    - branches
+
+.deploy production: &deploy_production
+  <<: *production
+  tags:
+    - production
+    - build
+    - deploy
+
+build backend on production:
+  <<: *deploy_production
+  script:
+    - docker-compose config
+    - docker-compose build
+    - docker-compose push
+  stage: build
+
+deploy backend on production:
+  <<: *deploy_production
+  script:
+    - docker-compose config
+    - docker-compose up -d
+  stage: deploy

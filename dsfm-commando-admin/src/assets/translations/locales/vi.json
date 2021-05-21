@@ -1,0 +1,20 @@
+{
+  "features.login.button": "ĐĂNG NHẬP",
+  "features.login.username": "Tài khoản",
+  "features.login.password": "Mật khẩu",
+  "sidebar.blankPage": "Trang rỗng",
+  "validate.required": "Bắt buộc",
+  "features.global.list-title": "Danh sách {name}",
+  "features.global.create-title": "Tạo mới {name}",
+  "features.global.edit-title": "Chỉnh sửa {name}",
+  "sidebar.dashboard": "Dashboard",
+  "sidebar.mers": "Quản lý Mer",
+  "sidebar.stores": "Quản lý Store",
+  "sidebar.plans": "Quản lý Plan",
+  "sidebar.regions": "Quản lý Region",
+  "sidebar.store-types": "Quản lý Store type",
+  "sidebar.zones": "Quản lý Zone",
+  "sidebar.cities": "Quản lý City",
+  "sidebar.charts": "Charts",
+  "sidebar.kpi": "KPI"
+}

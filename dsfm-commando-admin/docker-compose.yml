@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  admin:
+    image: Your IP :5000/dsfm_commando-admin-${CI_ENVIRONMENT_SLUG}:Lasted 
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_API_URL=${REACT_APP_API_URL}
+        - VERSION=${VERSION}
+    
+    container_name: dsfm_commando-admin
+    ports:
+      - '${HOST_PORT}:5000'
+
+networks:
+  default:
+    external:
+      name: your-networks-name
